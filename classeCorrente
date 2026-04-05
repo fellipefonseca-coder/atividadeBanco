@@ -1,0 +1,25 @@
+public class ContaCorrente extends Conta {
+
+    public ContaCorrente(double saldoInicial) {
+        super(saldoInicial);
+    }
+
+    // Sobrescrita
+    @Override
+    public void sacar(double valor) {
+        double taxa = 2.0; // taxa fixa
+
+        if (valor + taxa <= saldo) {
+            saldo -= (valor + taxa);
+            System.out.println("Saque Conta Corrente (com taxa). Saldo: " + saldo);
+        } else {
+            System.out.println("Saldo insuficiente na Conta Corrente.");
+        }
+    }
+
+    // Sobrecarga
+    @Override
+    public void sacar(double valor, double taxa) {
+        super.sacar(valor, taxa);
+    }
+}
