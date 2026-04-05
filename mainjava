@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+
+        Conta c = new Conta(100);
+        ContaCorrente cc = new ContaCorrente(100);
+        ContaPoupanca cp = new ContaPoupanca(100);
+
+        // Saque normal
+        c.sacar(20);
+        cc.sacar(20);
+        cp.sacar(20);
+
+        System.out.println("-----");
+
+        // Saque com taxa
+        c.sacar(20, 5);
+        cc.sacar(20, 5);
+        cp.sacar(20, 5);
+    }
+}
